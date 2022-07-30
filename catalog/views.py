@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 from .models import Book, Author, BookInstance, Genre
 
 def index(request):
@@ -19,3 +20,12 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+class BookListView(generic.ListView):
+    model = Book
+    context_object_name = 'book_list' # your own name for the template
+    queryset = Book.objects.filter(title__icontains='war')[:5]
+    template_name = 'books/book_list.html'
+
+class BookDetailView(generic.ListView):
+    model = Book
