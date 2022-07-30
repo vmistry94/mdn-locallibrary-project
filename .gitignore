@@ -1,3 +1,4 @@
 # Ignore all pycache folders across the repo
 
 **/__pycache__/
+.env
