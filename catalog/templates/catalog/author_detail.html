@@ -8,13 +8,21 @@
 
     <h4>Books by this author</h4>
 
-    {% for book in author.book_set.all %}
+    {% if author.book_set.all %}
 
-    <p><a href="{{ book.get_absolute_url }}"><strong>{{ book.title }}</strong></a></p>
-    <p class="text-muted" style="font-size:0.8rem; margin-top: -10px;"><strong>Genre(s):</strong> {{ book.genre.all|join:", " }}</p>
-    <p style="margin-top: -10px;">{{ book.summary }}</p>
+        {% for book in author.book_set.all %}
 
-    {% endfor %}
+        <p><a href="{{ book.get_absolute_url }}"><strong>{{ book.title }}</strong></a></p>
+        <p class="text-muted" style="font-size:0.8rem; margin-top: -10px;"><strong>Genre(s):</strong> {{ book.genre.all|join:", " }}</p>
+        <p style="margin-top: -10px;">{{ book.summary }}</p>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>This author has no books in the library.</p>
+
+    {% endif %}
 
 </div>
 
