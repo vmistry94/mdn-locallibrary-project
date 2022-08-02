@@ -35,6 +35,16 @@
                     {% endif %}
                 </ul>
 
+                {% if user.is_staff %}
+                <hr>
+                <ul class="sidebar-nav">
+                    <li>Staff</li>
+                    {% if perms.catalog.can_mark_returned %}
+                    <li><a href="{% url 'all-borrowed' %}">All Borrowed</a></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+
                 {% endblock %}
             </div>
             <div class="col-sm-10 ">
