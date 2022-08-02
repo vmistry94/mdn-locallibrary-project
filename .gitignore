@@ -1,4 +1,11 @@
-# Ignore all pycache folders across the repo
-
+# Pycache folders
 **/__pycache__/
+
+# Local variables
 .env
+
+# Database
+*.sqlite3
+
+# Text backup files
+*.bak
