@@ -29,6 +29,7 @@ from django.urls import include
 urlpatterns += [
     path('', RedirectView.as_view(url='catalog/', permanent=True)),
     path('catalog/', include('catalog.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 # Mapping to serve static files in dev. environment
