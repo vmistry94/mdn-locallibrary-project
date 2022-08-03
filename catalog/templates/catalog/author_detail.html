@@ -5,7 +5,7 @@
 <script>
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-        'pageType': 'author_detail',
+        'page_type': 'author_detail',
         'author_name': '{{ author.first_name }} {{ author.last_name }}',
         'author_books': '{{ author.book_set.all|length }}'
     })

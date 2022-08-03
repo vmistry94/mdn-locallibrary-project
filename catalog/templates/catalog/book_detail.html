@@ -5,9 +5,9 @@
 <script>
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-        'pageType': 'book_detail',
+        'page_type': 'book_detail',
         'book_name': '{{ book.title }}',
-        'book_author': '{{ author.first_name }} {{ author.last_name }}',
+        'book_author': '{{ book.author.first_name }} {{ book.author.last_name }}',
         'book_isbn': '{{ book.isbn }}',
         'book_copies': '{{ book.bookinstance_set.all|length }}'
     })
