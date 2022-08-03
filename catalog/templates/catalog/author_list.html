@@ -21,9 +21,7 @@
 <ul>
     {% for author in author_list %}
     <li>
-        <a href="{{ author.get_absolute_url }}">
-            {{ author.last_name }}, {{ author.first_name }} <i>({{ author.date_of_birth }} - {{ author.date_of_death }})</i>
-        </a>
+        <a id="{{ author.first_name }} {{ author.last_name }}" href="{{ author.get_absolute_url }}">{{ author.last_name }}, {{ author.first_name }}</a> <i style="color: rgb(149, 149, 149);">({{ author.date_of_birth }} - {{ author.date_of_death }})</i>
     </li>
     {% endfor %}
 </ul>
