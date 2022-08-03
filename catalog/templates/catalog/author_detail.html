@@ -1,8 +1,21 @@
 {% extends "base_generic.html" %}
 
+{% block dataLayer %}
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'pageType': 'author_detail',
+        'author_name': '{{ author.first_name }} {{ author.last_name }}',
+        'author_books': '{{ author.book_set.all|length }}'
+    })
+</script>
+
+{% endblock %}
+
 {% block content %}
 
-<h1>Author: {{ author.title }}</h1>
+<h1>Author: {{ author.first_name }} {{ author.last_name }}</h1>
 
 <div style="margin-left:20px; margin-top:20px">
 
