@@ -30,7 +30,8 @@ DEBUG = config("DEBUG")
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'guarded-oasis-00422.herokuapp.com',
-    'glacial-retreat-72581.herokuapp.com'
+    'glacial-retreat-72581.herokuapp.com',
+    'mdn-locallibrary-sandbox.herokuapp.com'
 ]
 
 
