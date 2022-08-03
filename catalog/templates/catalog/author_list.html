@@ -6,9 +6,9 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'pageType': 'author_list',
-        'total_items': '{{ author.object_list|length }}',
-        'total_items_shown': '{{ author.paginator.count }}',
-        'pagination': '{{ author.paginator.number }} of {{ author.paginator.num_pages }}'
+        'total_items': '{{ object_list|length }}',
+        'total_items_shown': '{{ paginator.count }}',
+        'pagination': '{{ paginator.number }} of {{ paginator.num_pages }}'
     })
 </script>
 
