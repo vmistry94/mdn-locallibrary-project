@@ -1,5 +1,16 @@
 {% extends "base_generic.html" %}
 
+{% block dataLayer %}
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'pageType': 'homepage',
+    })
+</script>
+
+{% endblock %}
+
 {% block title %}<title>Local Library Catalog</title>{% endblock %}
 
 {% block content %}

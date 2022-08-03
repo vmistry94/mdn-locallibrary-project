@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    {% block dataLayer %}
+    {% endblock %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBRCEB7L72"></script>
     <script>
@@ -23,6 +25,11 @@
 
 <body>
 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8D5CKQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2">
@@ -36,6 +43,7 @@
 
                 <ul class="sidebar-nav">
                     {% if user.is_authenticated %}
+                    
                     <li>User: {{ user.get_username }}</li>
                     <li><a href="{% url 'my-borrowed' %}">My Borrowed</a></li>
                     <li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>

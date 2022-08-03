@@ -1,5 +1,19 @@
 {% extends "base_generic.html" %}
 
+{% block dataLayer %}
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'pageType': 'book_list',
+        'total_items': '{{ book.object_list|length }}',
+        'total_items_shown': '{{ book.paginator.count }}',
+        'pagination': '{{ book.paginator.number }} of {{ book.paginator.num_pages }}'
+    })
+</script>
+
+{% endblock %}
+
 {% block content %}
 
 <h1>Book List</h1>
